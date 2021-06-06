@@ -85,19 +85,6 @@ public class CharacterSelectionHandler : MonoBehaviour
             UpdateCharacterName(currentCharacter[i], i);
         }
 
-        /*
-        for (int i = 0; i < buttonArray.Length; i++)
-        {
-            int n = i;
-            if (characterSwitched == false)
-            {
-            characterSwitched = true;
-            buttonArray[n].onClick.AddListener(() => { PreviousCharacter(n); });
-                
-            }
-            
-        }
-        */
     }
 
 
@@ -184,7 +171,6 @@ public class CharacterSelectionHandler : MonoBehaviour
        characterNameDisplayTM[playerIndex].SetText(characterObject.name);
     }
 
-    /////////Need Ready Script for Player Ready Up
 
     public void UserReadyUp()
     {

@@ -12,13 +12,11 @@ public class LocalMultiplayerHandler : MonoBehaviour
 {
     CharacterSelectionHandler characterSelectionHandler;
 
-    //int deviceCompare;
+
     int playerMarkerIndex;
     PlayerInputManager playerInputManager;
     [SerializeField] public List<GameObject> playerMarker = new List<GameObject>();
-    //int i = 0;
-    //[SerializeField] GameObject playerPrefab;
-    // Start is called before the first frame update
+   
     void Start()
     {
         characterSelectionHandler = GameObject.Find("CharacterSelectionManager").GetComponent<CharacterSelectionHandler>();
@@ -27,7 +25,7 @@ public class LocalMultiplayerHandler : MonoBehaviour
         playerMarkerIndex = 0;
         Debug.Log("Marker Num" + playerMarker);
         playerInputManager.playerPrefab = playerMarker[playerMarkerIndex];
-        //Debug.Log("User paired device: " + InputUser.all[0].pairedDevices.Count);
+     
 
     }
 
@@ -40,34 +38,7 @@ public class LocalMultiplayerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (InputUser.all[0].pairedDevices.Count == 0)
-        //GameObject.Find("PlayerMarker0(Clone)").SetActive(false);
-        //if (InputUser.all[0].pairedDevices.Count == 1)
-        //GameObject.Find("PlayerMarker0(Clone)").SetActive(true);
-        /*
-        // Listening must be enabled explicitly.
-        //++InputUser.listenForUnpairedDeviceActivity;
-
-        // Example of how to spawn a new player automatically when a button
-        // is pressed on an unpaired device.
-        InputUser.onUnpairedDeviceUsed +=
-            (control, eventPtr) =>
-            {
-        // Ignore anything but button presses.
-        if (!(control is ButtonControl))
-                    return;
-
-                // Spawn player and pair device. If the player's actions have control schemes
-                // defined in them, PlayerInput will look for a compatible scheme automatically.
-                if (GameObject.Find(playerPrefab.name + "(Clone)") == null && control.device.deviceId != deviceCompare)
-                    {
-                        //PlayerInput.Instantiate(playerPrefab, pairWithDevice: control.device);
-                        //deviceCompare = control.device.deviceId;
-                    }           
-                else
-                    return;
-            };
-            */
+        
         Debug.Log("The number of users: " + InputUser.all.Count);
 
             InputSystem.onDeviceChange +=
@@ -103,20 +74,14 @@ public class LocalMultiplayerHandler : MonoBehaviour
     {
         characterSelectionHandler.LoadCharacter(playerInputManager.playerPrefab.transform.position, playerMarkerIndex);
 
-        //*Link to UIInputSystem and PlayerMarkers seem unessary
-        //var eve = GameObject.Find("MultiplayerEventSystem01").GetComponent<InputSystemUIInputModule>();
-        //var multeve = GameObject.Find("PlayerMarker" + (playerMarkerIndex + 1) + "(Clone)").GetComponent<PlayerInput>().uiInputModule;
+        
         characterSelectionHandler.ButtonSelectOnUserLoad(playerMarkerIndex);
-        //multeve = eve;
-
-        //Debug.Log("Content of UI Input System: " + multeve);
-
+    
+       
         playerMarkerIndex = playerMarkerIndex + 1;
         Debug.Log("Marker Num" + playerMarker);
         playerInputManager.playerPrefab = playerMarker[playerMarkerIndex];
-        
-        //i = i + 1;
-        //Debug.Log("Player Input: " + PlayerInput.all[0]);
+  
 
     }
 
@@ -159,27 +124,4 @@ public class LocalMultiplayerHandler : MonoBehaviour
         }
     }
 
-    /*
-    public void LeftRemoveMarker(PlayerInput input)
-    {
-        Object.Destroy(input.gameObject);
-       
-    }
-
-    void OnDestroyPlayerMarkerGameObject()
-    {
-        //gameObject);
-    }
-
-    public void LeftRemoveMarkerContext(InputAction.CallbackContext context)
-    {
-        Debug.Log("PlayerDisconnected from Context");
-        Object.Destroy(this.gameObject);
-    }
-
-    public void DisconnectRemoveMarker()
-    {
-        Destroy(this.gameObject);
-    }
-    */
 }

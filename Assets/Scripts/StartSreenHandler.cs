@@ -14,54 +14,18 @@ public class StartSreenHandler : MonoBehaviour
 
     public GameObject optionsMenuFirstButton, mainMenuFirstButton;
 
-    
-
-   
 
     int numDevices;
     int numGamepads;
-    //Gamepad player1;
-    //Gamepad player2;
-    //Gamepad player3;
-    //Gamepad player4;
-
+  
     private void Awake()
     {
         EventSystem.current.GetComponent<EventSystem>();
 
         numDevices = InputSystem.devices.Count;
         numGamepads = Gamepad.all.Count;
-        //Debug.Log("Device count is " + numDevices);
-        //Debug.Log("Gamepad count is " + numGamepads);
-
-        /*
-        //Register Player Order @ start
-        if (numGamepads > 0)
-            if (numGamepads <= 4)
-            {
-                for (int i = 0; i < numGamepads; i++)
-                {
-                    InputSystem.SetDeviceUsage(Gamepad.all[i], "Player" + (i));
-                }
-            }
-            else if (numGamepads >= 4)
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    InputSystem.SetDeviceUsage(Gamepad.all[i], "Player" + (i));
-                }
-            }
-            */
+       
     }
-
-
-
-
-
-    ////Show List of Register Devices (Order in Gamepad.all & Label) *Need to see if order is kept between disconnect * should be kept with InputDevice.deviceId
-    //Debug.Log if Device is being Press and if seen as same device we know it's working
-
-    ////Player Register Visual Update
 
     private void Start()
     {

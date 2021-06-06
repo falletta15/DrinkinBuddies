@@ -38,9 +38,7 @@ public class UITimer : MonoBehaviour
 
     public void TransitionToBoardScene()
     {
-        //save select character data
-        //PlayerPrefs.SetInt("characterModel#", characterNum);
-        //PlayerPrefs.Save();
+     
         SceneManager.LoadScene("BoardSelectionScene");
     }
 
