@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class BoardScreenController : MonoBehaviour
 {
-
+    //Move to Game Manager
     public void TransitiontoBoard00()
     {
-        SceneManager.LoadScene("Board00");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
 }

@@ -15,7 +15,7 @@ public class UITimer : MonoBehaviour
     void Start()
     {
         countingDown = true;
-        secondsLeft = 10;
+        secondsLeft = 2;
         textDisplay.GetComponent<TextMeshProUGUI>().text = "";     
     }
 

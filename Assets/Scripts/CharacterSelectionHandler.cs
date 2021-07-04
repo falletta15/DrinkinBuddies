@@ -18,7 +18,7 @@ public class CharacterSelectionHandler : MonoBehaviour
     int readyCounter;
 
     GameObject[] characterPrefabs;
-    GameObject[] currentCharacter;
+    public GameObject[] currentCharacter;
     public bool[] characterLoaded;
 
     [SerializeField] TextMeshProUGUI[] characterNameDisplayTM;
@@ -178,11 +178,18 @@ public class CharacterSelectionHandler : MonoBehaviour
 
         readyCounter++;
         Debug.Log("User is ready: " + readyCounter);
-        
+
 
         if (readyCounter >= 4)
-            
+        {
+
+            //Add code to send data on player manager devices & prefab link
+            localMultiplayerHandler = GameObject.Find("PlayerManager").GetComponent<LocalMultiplayerHandler>();
+            localMultiplayerHandler.CapturePlayerData();
+
             uiTimer.StartTimer();
+        }
+            
 
     }
 

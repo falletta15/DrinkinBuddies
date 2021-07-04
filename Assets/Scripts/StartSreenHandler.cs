@@ -17,7 +17,9 @@ public class StartSreenHandler : MonoBehaviour
 
     int numDevices;
     int numGamepads;
-  
+
+    bool runInputDisconnect = false;
+
     private void Awake()
     {
         EventSystem.current.GetComponent<EventSystem>();
@@ -35,16 +37,11 @@ public class StartSreenHandler : MonoBehaviour
 
     private void Update()
     {
-        //ESC exit
-        if (Input.GetKeyDown(KeyCode.Escape))
-            UnityEditor.EditorApplication.isPlaying = false;
-
-
 
         numDevices = InputSystem.devices.Count;
         numGamepads = Gamepad.all.Count;
-        Debug.Log("Updated Device count is " + numDevices);
-        Debug.Log("Updated Gamepad count is " + numGamepads);
+        //Debug.Log("Updated Device count is " + numDevices);
+        //Debug.Log("Updated Gamepad count is " + numGamepads);
 
         if (numGamepads >= 1)
         {
@@ -59,8 +56,9 @@ public class StartSreenHandler : MonoBehaviour
         }
 
         
-
-        InputSystem.onDeviceChange +=
+        if (runInputDisconnect == true)
+        {
+            InputSystem.onDeviceChange +=
             (device, change) =>
             {
                 switch (change)
@@ -75,9 +73,14 @@ public class StartSreenHandler : MonoBehaviour
                         break;
                 }
             };
+        }
+        
     }
 
-
+    public void SetRunInputDisconnectTrue()
+    {
+        runInputDisconnect = true;
+    }
 
     public void TransitiontoCharacterSelectScene()
     {
