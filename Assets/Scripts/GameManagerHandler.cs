@@ -42,4 +42,9 @@ public class GameManagerHandler : MonoBehaviour
             localMultiplayerHandler.SetRunInputDisconnectTrue();
 
     }
+
+    public void TransitiontoBoard00()
+    {
+        SceneManager.LoadScene("Board00");
+    }
 }

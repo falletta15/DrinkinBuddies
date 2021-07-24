@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PanalDataUpdate : MonoBehaviour
 {
+
+    GameManagerHandler gameManagerHandler;
+
     InputActionAsset inputActions;
     //string[] playerMap;
 
@@ -27,6 +30,8 @@ public class PanalDataUpdate : MonoBehaviour
     void Start()
     {
         LoadAndSetPlayers();
+        gameManagerHandler = GameObject.Find("GameManager").GetComponent<GameManagerHandler>();
+        gameManagerHandler.Invoke("TransitiontoBoard00", 3f);
     }
 
     // Update is called once per frame
