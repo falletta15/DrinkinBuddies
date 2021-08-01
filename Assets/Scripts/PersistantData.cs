@@ -5,11 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PersistantData : MonoBehaviour
 {
-
+    //Player Input Variables
     protected int playerCount;
     protected int[] playerIndex;
     protected string[] playerPrefab;
     protected InputDevice[] playerDevices;
+
+
+
 
     static PersistantData instance;
 
@@ -21,9 +24,14 @@ public class PersistantData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Player Input Arrays
         playerIndex = new int[4];
         playerPrefab = new string[4];
         playerDevices = new InputDevice[4];
+
+
+
+
 
         //Ensuring Class remains singleton
         if (instance != null)
@@ -37,7 +45,7 @@ public class PersistantData : MonoBehaviour
     }
 
   
-
+    //Player Input Get & Set
     public void SetCount(int count)
     {
         playerCount = count;
@@ -77,6 +85,10 @@ public class PersistantData : MonoBehaviour
     {
         return playerDevices[i];
     }
+
+
+
+
 
     // Update is called once per frame
     void Update()

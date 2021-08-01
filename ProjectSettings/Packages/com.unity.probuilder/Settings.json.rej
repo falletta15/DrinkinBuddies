@@ -1,0 +1,10 @@
+diff a/ProjectSettings/Packages/com.unity.probuilder/Settings.json b/ProjectSettings/Packages/com.unity.probuilder/Settings.json	(rejected hunks)
+@@ -321,6 +321,8 @@
+             {
+                 "type": "UnityEditor.ProBuilder.Actions.DetachFaces+DetachSetting, Unity.ProBuilder.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                 "key": "DetachFaces.target",
++=======
++>>>>>>> main
+                 "value": "{\"m_Value\":0}"
+             }
+         ]
