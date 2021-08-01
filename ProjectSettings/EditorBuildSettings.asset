@@ -1,22 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: 64519e2df2dc45d469507846a4211c40
-  - enabled: 1
-    path: Assets/Scenes/CharacterSelect.unity
-    guid: 7e6e9eea86556e343ad7ca08337851fe
-  - enabled: 1
-    path: Assets/Scenes/BoardSelectionScene.unity
-    guid: ff8d2cf872f77044a9a20cff997d2969
-  - enabled: 1
-    path: Assets/Scenes/Board00.unity
-    guid: 9e377a03225ea424f82d31393f0fdac7
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: b3a17002da7ea63409b402fbc1b5f1c1,
-      type: 2}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ddd4ea339b0d6b28f8e950b66b56beaf8935e08bd8f00005afae4834f4334348
+size 687
